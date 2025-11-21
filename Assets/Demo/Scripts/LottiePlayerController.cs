@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Gilzoide.LottiePlayer;
+using TMPro;
 using UnityEngine;
 
 public struct LottieSpawnData
@@ -36,19 +37,24 @@ public class LottiePlayerController : MonoBehaviour
     [SerializeField] private ImageLottiePlayer lottiePlayerPrefab;
     [SerializeField] private LottieResolutionSelector resolutionSelector;
     [SerializeField] private LottieSelector lottieSelector;
+    [SerializeField] private TMP_Text debugText;
 
     private SpawnLogic _logic;
     private Dictionary<int, LottieSpawnData> _players;
+    private Dictionary<string, LottieAnimationAsset> _assets;
 
     private int _resolution;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _players = new Dictionary<int, LottieSpawnData>();
         _logic = new SpawnLogic(spawnParent.rect);
+        _players = new Dictionary<int, LottieSpawnData>();
+        _assets = new Dictionary<string, LottieAnimationAsset>();
         resolutionSelector.OnResolutionChanged.AddListener(OnResolutionChanged);
         lottieSelector.OnSelected.AddListener(OnLottieSelected);
+
+        UpdateDebugText();
     }
 
     void OnDestroy()
@@ -73,7 +79,10 @@ public class LottiePlayerController : MonoBehaviour
         player.SetAnimationAsset(animationAsset);
         player.Play();
         _players.Add(spawnData.Id, spawnData);
+
+        _assets.TryAdd(animationAsset.name, animationAsset);
         
+        UpdateDebugText();
         return spawnData;
     }
 
@@ -83,6 +92,8 @@ public class LottiePlayerController : MonoBehaviour
         {
             Destroy(data.Player.gameObject);
         }
+        
+        UpdateDebugText();
     }
 
     private void OnResolutionChanged(int resolution)
@@ -94,5 +105,14 @@ public class LottiePlayerController : MonoBehaviour
     {
         var spawned = SpawnLottie(asset);
         Debug.Log($"[LottieController] Lottie spawn[{spawned.Id}]. Asset:{spawned.AnimationAsset.name}");
+    }
+
+    private void UpdateDebugText()
+    {
+        if (debugText == null) return;
+
+        var count = _players.Count;
+        var lotties = _assets.Count;
+        debugText.text = $"Count: {count}\nLotties:{lotties}";
     }
 }

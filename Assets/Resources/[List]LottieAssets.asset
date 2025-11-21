@@ -28,3 +28,21 @@ MonoBehaviour:
   - name: piggybankdancing
     thumbnail: {fileID: 21300000, guid: ee0ddf88c444e43e1bda87395ed0426b, type: 3}
     asset: {fileID: -6750239444755058063, guid: cebb265798d034760b2ea4e87ef3c0c6, type: 3}
+  - name: bacon
+    thumbnail: {fileID: 21300000, guid: 667ee12eddfb64ababf4eb0d40fdd4cf, type: 3}
+    asset: {fileID: -6750239444755058063, guid: 34dbe6adf046f46f6b8ae61b58767b98, type: 3}
+  - name: confetti-ball
+    thumbnail: {fileID: 21300000, guid: c20f323a18fce4916bfd25cc6a78ed5c, type: 3}
+    asset: {fileID: -6750239444755058063, guid: 55466f64b3cb64723910d366bcb7bb97, type: 3}
+  - name: cupid
+    thumbnail: {fileID: 21300000, guid: 3aa2a6744119a44b2a646048fa604720, type: 3}
+    asset: {fileID: -6750239444755058063, guid: e2de6f9d3d3d2494bbbc139fd7bba49f, type: 3}
+  - name: mirror-ball
+    thumbnail: {fileID: 21300000, guid: 226480873dbf04c7cb96645e38a47544, type: 3}
+    asset: {fileID: -6750239444755058063, guid: 50fa0b1d7e434499db4d817b20e0929c, type: 3}
+  - name: navidad
+    thumbnail: {fileID: 21300000, guid: 8defa8bfcded54bb89eb5bcdf7ff17a5, type: 3}
+    asset: {fileID: -6750239444755058063, guid: 47a8d3f5516cb47babe99539d12b1a58, type: 3}
+  - name: wine-glass
+    thumbnail: {fileID: 21300000, guid: 20a7d1f7740d6451a9eace3c3a227e3b, type: 3}
+    asset: {fileID: -6750239444755058063, guid: c1b6723913f804179a3b20af732854e6, type: 3}
