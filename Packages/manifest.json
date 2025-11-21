@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "com.gilzoide.lottie-player": "https://github.com/gilzoide/unity-lottie-player.git",
+    "com.kyub.emojisearch": "https://gitlab.com/KyubInteractive/emojisearchapi.git#com.kyub.emojisearch-1.1.5",
+    "com.neon-izm.tmpro-fonts-rude": "https://github.com/neon-izm/UnityTextMeshProNotoSansForRude.git#upm",
     "com.tayx.graphy": "https://github.com/Tayx94/graphy.git",
     "com.unity.ai.navigation": "2.0.9",
     "com.unity.collab-proxy": "2.10.2",
